@@ -55,19 +55,33 @@ export default function QuizPage() {
     }
   };
 
-  if (!questions.length) return <div>Loading...</div>;
+  if (!questions.length)
+    return (
+      <div className="min-h-screen bg-primary flex items-center justify-center">
+        <div className="text-4xl font-bold bubble-text text-accent animate-bounce-cartoon">
+          🎮 Loading Questions...
+        </div>
+      </div>
+    );
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4">
-      <QuestionCard
-        question={questions[currentQuestion]}
-        answers={questions[currentQuestion].answers}
-        callback={(e) => handleAnswer(e.currentTarget.value)}
-        userAnswer={userAnswers[currentQuestion]}
-        questionNr={currentQuestion + 1}
-        totalQuestions={questions.length}
-      />
-      <p className="text-center mt-4 text-xl">Puntaje: {score}</p>
+    <div className="min-h-screen bg-primary p-8">
+      <div className="max-w-4xl mx-auto">
+        <QuestionCard
+          question={questions[currentQuestion]}
+          answers={questions[currentQuestion].answers}
+          callback={(e) => handleAnswer(e.currentTarget.value)}
+          userAnswer={userAnswers[currentQuestion]}
+          questionNr={currentQuestion + 1}
+          totalQuestions={questions.length}
+        />
+
+        <div className="mt-8 text-center">
+          <p className="text-2xl font-bold bubble-text text-secondary animate-bounce-cartoon">
+            🏆 Score: {score}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

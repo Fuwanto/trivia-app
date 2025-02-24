@@ -3,19 +3,64 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f0f9ff;
+  --foreground: #1e3a8a;
+  --primary: #38bdf8;
+  --secondary: #f472b6;
+  --accent: #fde047;
+  --border-width: 3px;
+  --shadow-text: #121826;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+  --primary: #4b5ea8;
+  --secondary: #d946ef;
+  --accent: #eab308;
+  --shadow-text: #51545e;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Estilos de borde cartoon */
+@layer components {
+  .cartoon-border {
+    border: var(--border-width) solid var(--foreground);
+    box-shadow: 5px 5px 0 var(--foreground);
+    transition: all 0.2s ease;
+  }
+
+  .cartoon-button {
+    @apply cartoon-border rounded-lg px-6 py-3 font-bold uppercase;
+    background-color: var(--primary);
+
+    &:hover {
+      @apply translate-x-1 translate-y-1;
+      box-shadow: 3px 3px 0 var(--foreground);
+    }
+  }
+
+  .bubble-text {
+    text-shadow: 2px 2px 0 var(--shadow-text);
+  }
+}
+
+/* Animaciones */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-cartoon {
+  animation: bounce 1s infinite;
 }

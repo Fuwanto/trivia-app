@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎮 Trivia Time! 🌈
 
-## Getting Started
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FFuwanto%2Ftrivia-time)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-First, run the development server:
+<div align="center">
+  <img src="public/Screenshot.jpeg" width="600" alt="Screenshot de la app">
+</div>
+
+## 🌐 API Utilizada / API Used
+
+La aplicación utiliza la API de [Open Trivia Database](https://opentdb.com/api_config.php) para obtener preguntas de trivia de diversas categorías y niveles de dificultad.
+
+The application uses the [Open Trivia Database](https://opentdb.com/api_config.php) API to fetch trivia questions from various categories and difficulty levels.
+
+## 🌟 Características Principales / Key Features
+
+### Español
+
+- 🎨 Diseño cartoon con colores vibrantes
+- 🌓 Tema claro/oscuro con persistencia
+- 🚀 Animaciones y transiciones fluidas
+- 📚 Diferentes categorías y tipos de preguntas
+- 🏆 Sistema de puntuación con efectos visuales
+- 📱 Diseño 100% responsive
+- ⚡ Rendimiento optimizado
+
+### English
+
+- 🎨 Cartoon-style design with vibrant colors
+- 🌓 Light/dark theme with persistence
+- 🚀 Smooth animations and transitions
+- 📚 Multiple question categories and types
+- 🏆 Scoring system with visual feedback
+- 📱 Fully responsive design
+- ⚡ Optimized performance
+
+## 🛠 Tecnologías Usadas / Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) 14
+- **Estilos**: [Tailwind CSS](https://tailwindcss.com/) + CSS Variables
+- **Tipado**: TypeScript
+- **Animaciones**: CSS Keyframes
+- **Hosting**: Vercel
+- **Gestión de Estado**: React Hooks
+- **Iconos**: Emojis y SVG personalizados
+
+## 🚀 Instalación Local / Local Installation
 
 ```bash
+# Clonar repositorio
+git clone https://github.com/tu-usuario/trivia-time.git
+cd trivia-time
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build para producción
+npm run build
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

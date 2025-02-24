@@ -10,17 +10,26 @@ export default function ResultsPage() {
   const total = searchParams.get("total");
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4">
-      <Card className="max-w-md mx-auto text-center">
-        <h1 className="text-3xl font-bold mb-4">Resultados</h1>
-        <p className="text-2xl mb-6">
-          Obtuviste {score} de {total} correctas!
-        </p>
+    <div className="min-h-screen bg-primary p-8 flex items-center justify-center">
+      <Card className="max-w-lg mx-auto text-center cartoon-border bg-background p-8">
+        <h1 className="text-4xl font-bold bubble-text text-accent mb-8">
+          Game Results
+        </h1>
+
+        <div className="animate-bounce-cartoon mb-8">
+          <p className="text-6xl font-bold text-secondary">
+            {score}
+            <span className="text-3xl text-foreground">/</span>
+            {total}
+          </p>
+          <p className="text-2xl mt-2 text-foreground">Correct Answers</p>
+        </div>
+
         <button
           onClick={() => router.push("/")}
-          className="bg-blue-500 text-white py-2 px-6 rounded hover:bg-blue-600"
+          className="cartoon-button text-xl px-8 py-3 hover:bg-secondary text-foreground font-bold uppercase"
         >
-          Jugar de nuevo
+          Play Again!
         </button>
       </Card>
     </div>

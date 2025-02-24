@@ -1,5 +1,5 @@
 import Card from "./Card";
-import { QuestionState } from "../../types/trivia";
+import { QuestionState } from "../types/trivia";
 
 type Props = {
   question: QuestionState;
@@ -20,28 +20,38 @@ export default function QuestionCard({
 }: Props) {
   return (
     <Card className="max-w-2xl mx-auto">
-      <div className="mb-4 flex justify-between items-center">
-        <span className="text-gray-500">Categoría: {question.category}</span>
-        <span className="text-gray-500">
-          Pregunta: {questionNr}/{totalQuestions}
+      <div className="mb-6 flex justify-between items-center text-secondary">
+        <span className="font-bold bubble-text">
+          Category: {question.category}
+        </span>
+        <span className="font-bold bubble-text">
+          Question: {questionNr}/{totalQuestions}
         </span>
       </div>
 
       <h2
-        className="text-xl mb-6"
+        className="text-2xl mb-8 font-bold text-center bubble-text text-accent"
         dangerouslySetInnerHTML={{ __html: question.question }}
       />
 
-      <div className="grid gap-3">
+      <div className="grid gap-4">
         {answers.map((answer) => (
           <button
             key={answer}
             onClick={callback}
             value={answer}
             disabled={!!userAnswer}
-            className={`p-3 rounded-md text-left transition-colors
-                ${!userAnswer ? "bg-blue-100 hover:bg-blue-200" : ""}
-                ${userAnswer === answer ? "bg-blue-500 text-white" : ""}`}
+            className={`cartoon-border p-4 text-left transition-all duration-200
+              ${
+                !userAnswer
+                  ? "bg-primary hover:bg-secondary hover:translate-x-1 hover:translate-y-1"
+                  : "cursor-not-allowed"
+              }
+              ${
+                userAnswer === answer
+                  ? "bg-accent text-foreground scale-105"
+                  : "bg-foreground text-background"
+              }`}
             dangerouslySetInnerHTML={{ __html: answer }}
           />
         ))}
