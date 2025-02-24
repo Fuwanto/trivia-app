@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <div align="center">
-  <img src="public/Screenshot.jpeg" width="600" alt="Screenshot de la app">
+  <img src="public/Trivia Time! - Cartoon Quiz Game.png" width="600" alt="Screenshot de la app">
 </div>
 
 ## 🌐 API Utilizada / API Used
