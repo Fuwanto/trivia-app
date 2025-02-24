@@ -1,9 +1,19 @@
 "use client";
 
+import { Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Card from "../../components/Card";
 
-export default function ResultsPage() {
+// Componente que envuelve a ResultsPage en un Suspense
+export default function ResultsPageWrapper() {
+  return (
+    <Suspense fallback={<LoadingScreen />}>
+      <ResultsPage />
+    </Suspense>
+  );
+}
+
+function ResultsPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const score = searchParams.get("score");
@@ -32,6 +42,17 @@ export default function ResultsPage() {
           Play Again!
         </button>
       </Card>
+    </div>
+  );
+}
+
+// Pantalla de carga para el fallback del Suspense
+function LoadingScreen() {
+  return (
+    <div className="min-h-screen bg-primary p-8 flex items-center justify-center">
+      <div className="text-4xl font-bold bubble-text text-accent animate-bounce-cartoon">
+        Loading...
+      </div>
     </div>
   );
 }
