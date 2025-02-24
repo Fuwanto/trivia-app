@@ -33,13 +33,17 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen rounded-lg p-8 bg-primary flex items-center justify-center">
-      <Card className="cartoon-border bg-background p-8 max-w-2xl w-full">
-        <h1 className="text-4xl font-bold bubble-text text-accent mb-8 text-center">
+    <div className="min-h-[calc(100vh-170px)] flex items-center justify-center p-8 bg-primary rounded-lg">
+      {/* Contenedor del Card con un ancho máximo para mejorar la lectura en pantallas grandes */}
+      <Card className="w-full max-w-2xl p-8 bg-background cartoon-border">
+        {/* Título centrado */}
+        <h1 className="text-center text-4xl font-bold bubble-text text-accent mb-8">
           Set Up Your Trivia Game!
         </h1>
 
+        {/* Grid para agrupar los inputs en una columna en móvil y dos en pantallas medianas+ */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Número de Preguntas */}
           <div className="space-y-2">
             <label className="font-bold text-lg text-secondary">
               Number of Questions:
@@ -52,10 +56,11 @@ export default function Home() {
               onChange={(e) =>
                 setAmount(Math.min(50, Math.max(1, Number(e.target.value))))
               }
-              className="cartoon-border w-full p-3 rounded-lg bg-foreground text-background"
+              className="w-full p-3 rounded-lg bg-foreground text-background cartoon-border"
             />
           </div>
 
+          {/* Categoría */}
           <div className="space-y-2">
             <label className="font-bold text-lg text-secondary">
               Category:
@@ -63,7 +68,7 @@ export default function Home() {
             <select
               value={category}
               onChange={(e) => setCategory(Number(e.target.value) as Category)}
-              className="cartoon-border w-full p-3 rounded-lg bg-foreground text-background"
+              className="w-full p-3 rounded-lg bg-foreground text-background cartoon-border"
             >
               {Object.entries(Category)
                 .filter(([key]) => !isNaN(Number(key)))
@@ -82,6 +87,7 @@ export default function Home() {
             </select>
           </div>
 
+          {/* Dificultad */}
           <div className="space-y-2">
             <label className="font-bold text-lg text-secondary">
               Difficulty:
@@ -89,7 +95,7 @@ export default function Home() {
             <select
               value={difficulty}
               onChange={(e) => setDifficulty(e.target.value as Difficulty)}
-              className="cartoon-border w-full p-3 rounded-lg bg-foreground text-background"
+              className="w-full p-3 rounded-lg bg-foreground text-background cartoon-border"
             >
               {Object.values(Difficulty).map((d) => (
                 <option
@@ -103,6 +109,7 @@ export default function Home() {
             </select>
           </div>
 
+          {/* Tipo de Pregunta */}
           <div className="space-y-2">
             <label className="font-bold text-lg text-secondary">
               Question Type:
@@ -110,7 +117,7 @@ export default function Home() {
             <select
               value={questionType}
               onChange={(e) => setQuestionType(e.target.value as QuestionType)}
-              className="cartoon-border w-full p-3 rounded-lg bg-foreground text-background"
+              className="w-full p-3 rounded-lg bg-foreground text-background cartoon-border"
             >
               <option
                 value={QuestionType.MULTIPLE}
@@ -128,11 +135,12 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Botón para iniciar el juego */}
         <div className="mt-8 flex justify-center">
           <button
             onClick={startTrivia}
             disabled={loading}
-            className="cartoon-button text-xl px-8 py-4 disabled:bg-secondary disabled:cursor-not-allowed"
+            className="text-xl px-8 py-4 cartoon-button disabled:bg-secondary disabled:cursor-not-allowed"
           >
             {loading ? (
               <span className="flex items-center gap-2">

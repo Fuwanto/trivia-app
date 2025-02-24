@@ -20,7 +20,7 @@ export default function Header() {
   };
 
   return (
-    <header className="cartoon-border bg-background shadow-lg">
+    <header className="cartoon-border bg-background shadow-lg sticky top-0 z-50">
       <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
         <h1 className="text-2xl font-bold bubble-text text-accent">
           Trivia Time!

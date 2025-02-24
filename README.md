@@ -1,6 +1,6 @@
 # 🎮 Trivia Time! 🌈
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FFuwanto%2Ftrivia-time)
+[![Deploy with Vercel](https://vercel.com/button)](https://trivia-app-gilt-six.vercel.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <div align="center">

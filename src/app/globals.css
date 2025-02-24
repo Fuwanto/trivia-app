@@ -6,10 +6,10 @@
   --background: #f0f9ff;
   --foreground: #1e3a8a;
   --primary: #38bdf8;
-  --secondary: #f472b6;
-  --accent: #fde047;
+  --secondary: #f95faf;
+  --accent: #211b0b;
   --border-width: 3px;
-  --shadow-text: #121826;
+  --shadow-text: #51545e1a;
 }
 
 .dark {
@@ -18,7 +18,7 @@
   --primary: #4b5ea8;
   --secondary: #d946ef;
   --accent: #eab308;
-  --shadow-text: #51545e;
+  --shadow-text: #51545e1a;
 }
 
 body {
@@ -46,7 +46,7 @@ body {
   }
 
   .bubble-text {
-    text-shadow: 2px 2px 0 var(--shadow-text);
+    text-shadow: 1px 1px 0 var(--shadow-text);
   }
 }
 

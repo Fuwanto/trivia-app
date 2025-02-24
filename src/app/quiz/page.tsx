@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { fetchQuizQuestions } from "../../services/trivia";
 import { QuestionState, Difficulty } from "../../types/trivia";
 import QuestionCard from "../../components/QuestionCard";
+import LoadingScreen from "../../components/LoadingScreen";
 import { Category, QuestionType } from "../../types/trivia";
 
 // Este componente envuelve a QuizPage en un Suspense para evitar errores con useSearchParams()
@@ -70,19 +71,15 @@ function QuizPage() {
     }
   };
 
-  // Mientras no se hayan cargado las preguntas, se muestra una pantalla de carga
-  if (!questions.length)
-    return (
-      <div className="min-h-screen bg-primary flex items-center justify-center">
-        <div className="text-4xl font-bold bubble-text text-accent animate-bounce-cartoon">
-          🎮 Loading Questions...
-        </div>
-      </div>
-    );
+  // Si aún no se han cargado las preguntas, se muestra la pantalla de carga
+  if (!questions.length) {
+    return <LoadingScreen />;
+  }
 
   return (
-    <div className="min-h-screen bg-primary p-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-[calc(100vh-170px)] bg-primary p-8 flex items-center justify-center">
+      <div className="max-w-4xl w-full mx-auto">
+        {/* Tarjeta con la pregunta actual */}
         <QuestionCard
           question={questions[currentQuestion]}
           answers={questions[currentQuestion].answers}
@@ -92,22 +89,12 @@ function QuizPage() {
           totalQuestions={questions.length}
         />
 
+        {/* Mostramos el puntaje debajo de la pregunta */}
         <div className="mt-8 text-center">
           <p className="text-2xl font-bold bubble-text text-secondary animate-bounce-cartoon">
             🏆 Score: {score}
           </p>
         </div>
-      </div>
-    </div>
-  );
-}
-
-// Componente que se muestra mientras se cargan los datos
-function LoadingScreen() {
-  return (
-    <div className="min-h-screen bg-primary flex items-center justify-center">
-      <div className="text-4xl font-bold bubble-text text-accent animate-bounce-cartoon">
-        🎮 Loading...
       </div>
     </div>
   );
