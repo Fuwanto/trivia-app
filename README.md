@@ -37,13 +37,12 @@ The application uses the [Open Trivia Database](https://opentdb.com/api_config.p
 
 ## 🛠 Tecnologías Usadas / Tech Stack
 
-- **Framework**: [Next.js](https://nextjs.org/) 14
+- **Framework**: [Next.js](https://nextjs.org/) 15.1.7
 - **Estilos**: [Tailwind CSS](https://tailwindcss.com/) + CSS Variables
 - **Tipado**: TypeScript
 - **Animaciones**: CSS Keyframes
 - **Hosting**: Vercel
 - **Gestión de Estado**: React Hooks
-- **Iconos**: Emojis y SVG personalizados
 
 ## 🚀 Instalación Local / Local Installation
 
